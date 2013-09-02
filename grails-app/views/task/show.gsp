@@ -34,6 +34,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${taskInstance?.dateCreated}">
+				<li class="fieldcontain">
+					<span id="dateCreated-label" class="property-label"><g:message code="task.dateCreated.label" default="Date Created" /></span>
+					
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${taskInstance?.dateCreated}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${taskInstance?.entry}">
 				<li class="fieldcontain">
 					<span id="entry-label" class="property-label"><g:message code="task.entry.label" default="Entry" /></span>
@@ -48,6 +57,15 @@
 					<span id="hours-label" class="property-label"><g:message code="task.hours.label" default="Hours" /></span>
 					
 						<span class="property-value" aria-labelledby="hours-label"><g:fieldValue bean="${taskInstance}" field="hours"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${taskInstance?.lastUpdated}">
+				<li class="fieldcontain">
+					<span id="lastUpdated-label" class="property-label"><g:message code="task.lastUpdated.label" default="Last Updated" /></span>
+					
+						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${taskInstance?.lastUpdated}" /></span>
 					
 				</li>
 				</g:if>

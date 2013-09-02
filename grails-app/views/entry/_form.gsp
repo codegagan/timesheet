@@ -2,6 +2,14 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: entryInstance, field: 'date', 'error')} required">
+	<label for="date">
+		<g:message code="entry.date.label" default="Date" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="date" precision="day"  value="${entryInstance?.date}"  />
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: entryInstance, field: 'resource', 'error')} required">
 	<label for="resource">
 		<g:message code="entry.resource.label" default="Resource" />

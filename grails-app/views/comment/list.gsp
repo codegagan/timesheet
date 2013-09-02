@@ -26,6 +26,10 @@
 					
 						<g:sortableColumn property="comment" title="${message(code: 'comment.comment.label', default: 'Comment')}" />
 					
+						<g:sortableColumn property="dateCreated" title="${message(code: 'comment.dateCreated.label', default: 'Date Created')}" />
+					
+						<g:sortableColumn property="lastUpdated" title="${message(code: 'comment.lastUpdated.label', default: 'Last Updated')}" />
+					
 						<th><g:message code="comment.task.label" default="Task" /></th>
 					
 					</tr>
@@ -35,6 +39,10 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${commentInstance.id}">${fieldValue(bean: commentInstance, field: "comment")}</g:link></td>
+					
+						<td><g:formatDate date="${commentInstance.dateCreated}" /></td>
+					
+						<td><g:formatDate date="${commentInstance.lastUpdated}" /></td>
 					
 						<td>${fieldValue(bean: commentInstance, field: "task")}</td>
 					

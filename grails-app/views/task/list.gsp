@@ -24,9 +24,13 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="dateCreated" title="${message(code: 'task.dateCreated.label', default: 'Date Created')}" />
+					
 						<th><g:message code="task.entry.label" default="Entry" /></th>
 					
 						<g:sortableColumn property="hours" title="${message(code: 'task.hours.label', default: 'Hours')}" />
+					
+						<g:sortableColumn property="lastUpdated" title="${message(code: 'task.lastUpdated.label', default: 'Last Updated')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +38,13 @@
 				<g:each in="${taskInstanceList}" status="i" var="taskInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${taskInstance.id}">${fieldValue(bean: taskInstance, field: "entry")}</g:link></td>
+						<td><g:link action="show" id="${taskInstance.id}">${fieldValue(bean: taskInstance, field: "dateCreated")}</g:link></td>
+					
+						<td>${fieldValue(bean: taskInstance, field: "entry")}</td>
 					
 						<td>${fieldValue(bean: taskInstance, field: "hours")}</td>
+					
+						<td><g:formatDate date="${taskInstance.lastUpdated}" /></td>
 					
 					</tr>
 				</g:each>

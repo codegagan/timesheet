@@ -32,6 +32,24 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${commentInstance?.dateCreated}">
+				<li class="fieldcontain">
+					<span id="dateCreated-label" class="property-label"><g:message code="comment.dateCreated.label" default="Date Created" /></span>
+					
+						<span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate date="${commentInstance?.dateCreated}" /></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${commentInstance?.lastUpdated}">
+				<li class="fieldcontain">
+					<span id="lastUpdated-label" class="property-label"><g:message code="comment.lastUpdated.label" default="Last Updated" /></span>
+					
+						<span class="property-value" aria-labelledby="lastUpdated-label"><g:formatDate date="${commentInstance?.lastUpdated}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${commentInstance?.task}">
 				<li class="fieldcontain">
 					<span id="task-label" class="property-label"><g:message code="comment.task.label" default="Task" /></span>

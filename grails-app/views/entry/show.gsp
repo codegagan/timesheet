@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list entry">
 			
+				<g:if test="${entryInstance?.date}">
+				<li class="fieldcontain">
+					<span id="date-label" class="property-label"><g:message code="entry.date.label" default="Date" /></span>
+					
+						<span class="property-value" aria-labelledby="date-label"><g:formatDate date="${entryInstance?.date}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${entryInstance?.resource}">
 				<li class="fieldcontain">
 					<span id="resource-label" class="property-label"><g:message code="entry.resource.label" default="Resource" /></span>

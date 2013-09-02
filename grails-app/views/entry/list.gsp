@@ -24,6 +24,8 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="date" title="${message(code: 'entry.date.label', default: 'Date')}" />
+					
 						<th><g:message code="entry.resource.label" default="Resource" /></th>
 					
 					</tr>
@@ -32,7 +34,9 @@
 				<g:each in="${entryInstanceList}" status="i" var="entryInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${entryInstance.id}">${fieldValue(bean: entryInstance, field: "resource")}</g:link></td>
+						<td><g:link action="show" id="${entryInstance.id}">${fieldValue(bean: entryInstance, field: "date")}</g:link></td>
+					
+						<td>${fieldValue(bean: entryInstance, field: "resource")}</td>
 					
 					</tr>
 				</g:each>
