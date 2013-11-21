@@ -6,6 +6,7 @@ class Task {
 	Integer hours
 	Date dateCreated
     Date lastUpdated
+
     static constraints = {
     }
 	static belongsTo=Entry
